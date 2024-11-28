@@ -1,0 +1,531 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <a href="/users">Click here to check all the users</a>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <a href="/users">Click here to check all the users</a>
+    <h2>Add New User</h2>
+    
+    <form action="/add_user" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <select name="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="consultant">Consultant</option>
+        </select>
+        <button type="submit">Add User</button>
+    </form>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <h2>All Projects</h2>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>Title:</strong> {{ project[2] }}<br>
+                <strong>Client ID:</strong> {{ project[1] }}<br>
+                <strong>Description:</strong> {{ project[3] }}<br>
+                <strong>Status:</strong> {{ project[4] }}<br>
+                <strong>Deadline:</strong> {{ project[5] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add New Project</h2>
+    <form action="/add_project" method="POST">
+        <input type="number" name="client_id" placeholder="Client ID" required>
+        <input type="text" name="title" placeholder="Project Title" required>
+        <textarea name="description" placeholder="Project Description" required></textarea>
+        <select name="status" required>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <input type="date" name="deadline" required>
+        <button type="submit">Add Project</button>
+    </form>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <h2>Manage Users</h2>
+    <a href="/users">Click here to check all the users</a>
+    
+    <h3>Add New User</h3>
+    <form action="/add_user" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <select name="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="consultant">Consultant</option>
+        </select>
+        <button type="submit">Add User</button>
+    </form>
+
+    <hr>
+    
+
+    <h3>Add New Project</h3>
+    <form action="/add_project" method="POST">
+        <input type="number" name="client_id" placeholder="Client ID" required>
+        <input type="text" name="title" placeholder="Project Title" required>
+        <textarea name="description" placeholder="Project Description" required></textarea>
+        <select name="status" required>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <input type="date" name="deadline" required>
+        <button type="submit">Add Project</button>
+    </form>
+
+    <div>
+        <a href="/projects">View All Projects</a>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            color: #007bff;
+            margin-top: 30px;
+        }
+
+        form {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        form input, form textarea, form select, form button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .logout a {
+            color: #ff4d4d;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .project-link {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .project-link a {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .project-link a:hover {
+            background-color: #218838;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <div class="logout">
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div class="section">
+        <h2>Manage Users</h2>
+        <a href="/users">Click here to check all the users</a>
+        
+        <h3>Add New User</h3>
+        <form action="/add_user" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <select name="role" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="consultant">Consultant</option>
+            </select>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Manage Projects</h2>
+        <h3>Add New Project</h3>
+        <form action="/add_project" method="POST">
+            <input type="number" name="client_id" placeholder="Client ID" required>
+            <input type="text" name="title" placeholder="Project Title" required>
+            <textarea name="description" placeholder="Project Description" required></textarea>
+            <select name="status" required>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <input type="date" name="deadline" required>
+            <button type="submit">Add Project</button>
+        </form>
+
+        <div class="project-link">
+            <a href="/projects">View All Projects</a>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dashboard</title>
+ 
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 20px;
+             background-color: #f9f9f9;
+         }
+ 
+         h1 {
+             text-align: center;
+             color: #333;
+             margin-bottom: 20px;
+         }
+ 
+         h2, h3 {
+             color: #007bff;
+             margin-top: 30px;
+         }
+ 
+         form {
+             margin: 20px 0;
+             background-color: #fff;
+             padding: 15px;
+             border: 1px solid #ddd;
+             border-radius: 8px;
+         }
+ 
+         form input, form textarea, form select, form button {
+             width: 100%;
+             margin-bottom: 10px;
+             padding: 10px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+         }
+ 
+         form button {
+             background-color: #007bff;
+             color: white;
+             font-size: 16px;
+             cursor: pointer;
+         }
+ 
+         form button:hover {
+             background-color: #0056b3;
+         }
+ 
+         a {
+             color: #007bff;
+             text-decoration: none;
+             display: inline-block;
+             margin-top: 10px;
+         }
+ 
+         a:hover {
+             text-decoration: underline;
+         }
+ 
+         .logout {
+             text-align: right;
+             margin-bottom: 20px;
+         }
+ 
+         .logout a {
+             color: #ff4d4d;
+         }
+ 
+         .section {
+             margin-bottom: 40px;
+         }
+ 
+         ul {
+             list-style-type: none;
+             padding: 0;
+         }
+ 
+         ul li {
+             background-color: #fff;
+             margin-bottom: 10px;
+             padding: 10px;
+             border: 1px solid #ddd;
+             border-radius: 5px;
+         }
+ 
+         .project-link {
+             margin-top: 20px;
+             display: flex;
+             justify-content: center;
+         }
+ 
+         .project-link a {
+             background-color: #28a745;
+             color: white;
+             padding: 10px 20px;
+             border-radius: 5px;
+             font-weight: bold;
+         }
+ 
+         .project-link a:hover {
+             background-color: #218838;
+         }
+     </style>
+ 
+ </head>
+ <body>
+     <h1>Dashboard</h1>
+ 
+     <div class="logout">
+         <a href="/logout">Logout</a>
+     </div>
+ 
+     <!-- Manage Users Section -->
+     <div class="section">
+         <h2>Manage Users</h2>
+         <a href="/users">Click here to check all the users</a>
+         
+         <h3>Add New User</h3>
+         <form action="/add_user" method="POST">
+             <input type="text" name="username" placeholder="Username" required>
+             <input type="password" name="password" placeholder="Password" required>
+             <select name="role" required>
+                 <option value="user">User</option>
+                 <option value="admin">Admin</option>
+                 <option value="consultant">Consultant</option>
+             </select>
+             <button type="submit">Add User</button>
+         </form>
+     </div>
+ 
+     <!-- Manage Projects Section -->
+     <div class="section">
+         <h2>Manage Projects</h2>
+         <h3>Add New Project</h3>
+         <form action="/add_project" method="POST">
+             <input type="number" name="client_id" placeholder="Client ID" required>
+             <input type="text" name="title" placeholder="Project Title" required>
+             <textarea name="description" placeholder="Project Description" required></textarea>
+             <select name="status" required>
+                 <option value="Not Started">Not Started</option>
+                 <option value="In Progress">In Progress</option>
+                 <option value="Completed">Completed</option>
+             </select>
+             <input type="date" name="deadline" required>
+             <button type="submit">Add Project</button>
+         </form>
+ 
+         <div class="project-link">
+             <a href="/projects">View All Projects</a>
+         </div>
+     </div>
+    
+ 
+     <!-- Manage Tasks Section -->
+     <div class="section">
+         <h2>Manage Tasks</h2>
+         <h3>Add New Task</h3>
+         <form action="/add_task" method="POST">
+             <input type="number" name="project_id" placeholder="Project ID" required>
+             <input type="text" name="title" placeholder="Task Title" required>
+             <textarea name="description" placeholder="Task Description" required></textarea>
+             <select name="status" required>
+                 <option value="Not Started">Not Started</option>
+                 <option value="In Progress">In Progress</option>
+                 <option value="Completed">Completed</option>
+             </select>
+             <select name="priority" required>
+                 <option value="Low">Low</option>
+                 <option value="Medium">Medium</option>
+                 <option value="High">High</option>
+             </select>
+             <input type="date" name="deadline" required>
+             <button type="submit">Add Task</button>
+         </form>
+ 
+         <div class="project-link">
+             <a href="/tasks">View All Tasks</a>
+         </div>
+     </div> 
+
+    
+
+
+ 
+ </body>
+ </html>
+ 

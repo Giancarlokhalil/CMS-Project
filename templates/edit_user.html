@@ -1,0 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+
+    <form action="/edit_user/{{ user[0] }}" method="POST">
+        <input type="text" name="username" value="{{ user[1] }}" required>
+        <input type="password" name="password" value="{{ user[2] }}" required>
+        <select name="role" required>
+            <option value="user" {% if user[3] == 'user' %}selected{% endif %}>User</option>
+            <option value="admin" {% if user[3] == 'admin' %}selected{% endif %}>Admin</option>
+            <option value="consultant" {% if user[3] == 'consultant' %}selected{% endif %}>Consultant</option>
+        </select>
+        <button type="submit">Update User</button>
+    </form>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-container input[type="password"] {
+            font-size: 16px;
+        }
+
+        .form-container select {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Edit User</h1>
+
+
+    <p>Current Role: {{ user['role'] }}</p>
+
+    <div class="form-container">
+        <form action="/edit_user/{{ user['id'] }}" method="POST">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" value="{{ user['username'] }}" required>
+            </div>
+            
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter new password (leave empty to keep current)">
+            </div>
+            
+            <div>
+                <label for="role">Role</label>
+                <select name="role" id="role" required>
+                    <option value="user" {% if user['role'].strip() == 'user' %}selected{% endif %}>User</option>
+                    <option value="admin" {% if user['role'].strip() == 'admin' %}selected{% endif %}>Admin</option>
+                    <option value="consultant" {% if user['role'].strip() == 'consultant' %}selected{% endif %}>Consultant</option>
+                </select>
+            </div>
+            
+            <button type="submit">Update User</button>
+        </form>
+    </div>
+
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+
+    <form method="POST" action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{ user[1] }}" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="{{ user[2] }}" required><br>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="admin" {% if user[3] = "admin" %}selected{% endif %}>Admin</option>
+            <option value="user" {% if user[3] = "user" %}selected{% endif %}>User</option>
+            <option value="consultant" {% if user[3] = "consultant" %}selected{% endif %}>Consultant</option>
+        </select><br>
+
+        <button type="submit">Update</button>
+    </form>
+
+    <a href="/users">Back to Users</a>
+</body>
+</html>

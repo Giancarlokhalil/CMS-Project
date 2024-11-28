@@ -1,0 +1,161 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+
+    
+    {% for user in users %}
+        <div>ID: {{ user[0] }}</div>
+        <div>Username: {{ user[1] }}</div>  
+        <div>Password: {{ user[2] }}</div> 
+        <div>Role: {{ user[3] }}</div>  
+        <br>
+    {% endfor %}
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+
+    {% for user in users %}
+        <div>
+            <p>Username: {{ user[1] }}</p>
+            <p>Password: {{ user[2] }}</p>
+            <p>Role: {{ user[3] }}</p>
+            <a href="/edit_user/{{ user[0] }}">Edit</a> 
+            <a href="/delete_user/{{ user[0] }}">Delete</a>
+        </div>
+    {% endfor %}
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+
+    {% for user in users %}
+        <div>
+            <p>ID: {{ user[0]}}</p>
+            <p>Username: {{ user[1] }}</p>
+            <p>Password: {{ user[2] }}</p>
+            <p>Role: {{ user[3] }}</p>
+            <a href="/edit_user/{{ user[0] }}">Edit</a> 
+            <a href="/delete_user/{{ user[0] }}">Delete</a>
+        </div>
+
+        <hr>
+    {% endfor %}
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        /* User container */
+        .user-container {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .user-container p {
+            margin: 5px 0;
+        }
+
+        /* Links */
+        .user-container a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .user-container a:hover {
+            color: #0056b3;
+            text-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Horizontal separator */
+        hr {
+            border: none;
+            height: 1px;
+            background: #ccc;
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .user-container {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+
+    {% for user in users %}
+    <div class="user-container">
+        <p><strong>ID:</strong> {{ user[0] }}</p>
+        <p><strong>Username:</strong> {{ user[1] }}</p>
+        <p><strong>Password:</strong> {{ user[2] }}</p>
+        <p><strong>Role:</strong> {{ user[3] }}</p>
+        <a href="/edit_user/{{ user[0] }}">Edit</a>
+        <a href="/delete_user/{{ user[0] }}">Delete</a>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
+
+
